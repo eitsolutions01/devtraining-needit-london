@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element audit="true" extends="task" label="Needit" max_length="40" name="x_58872_needit_needit" type="collection">
+    <element audit="true" extends="task" label="Needit" max_length="40" name="x_58872_needit_needit" sizeclass="4" type="collection">
         <element attributes="edge_encryption_enabled=true" choice="3" default="legal" label="Requested Type" mandatory="true" max_length="40" name="u_choice_4" type="string">
             <choice>
                 <element inactive_on_update="false" label="Human Resouces" sequence="0" value="hr"/>
@@ -18,9 +18,25 @@
                 <element inactive_on_update="false" label="Legal 2" sequence="5" value="legal2"/>
                 <element inactive_on_update="false" label="Procurement 1" sequence="6" value="procurement1"/>
                 <element inactive_on_update="false" label="Procurement 2" sequence="7" value="procurement2"/>
+                <element inactive_on_update="false" label="Other" sequence="8" value="other"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" choice="1" default="oh" label="State" max_length="40" name="u_choice_state" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Ohio" sequence="0" value="oh"/>
+                <element inactive_on_update="false" label="Georgia" sequence="1" value="ga"/>
+                <element inactive_on_update="false" label="Florida" sequence="2" value="fl"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="City" max_length="40" name="u_city" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Cleveland" sequence="0" value="cleveland"/>
+                <element inactive_on_update="false" label="Columbus" sequence="1" value="columbus"/>
+                <element inactive_on_update="false" label="Choice 3" sequence="2" value="Choice 3"/>
             </choice>
         </element>
         <element label="When Needed" mandatory="true" max_length="40" name="u_glide_date_1" type="glide_date"/>
+        <element attributes="edge_encryption_enabled=true" label="Other" max_length="40" name="u_other" type="string"/>
         <element label="New Reference" max_length="32" name="u_reference_2" reference="cmdb_ci_appl_dot_net" type="reference"/>
         <element label="Requested for" mandatory="true" max_length="32" name="u_reference_3" reference="sys_user" type="reference"/>
     </element>
